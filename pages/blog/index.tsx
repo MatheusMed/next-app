@@ -13,12 +13,9 @@ function Blog({ posts }: Props) {
         {posts.map((item, index) => (
           <div key={index} style={{ padding: '10px', flexDirection: 'column', margin: '10px' }} >
             <li >
-              titulo: {item.title}
+              titulo: <a href={`/blog/${item.id}`}>{item.title}</a>
             </li>
-            <br />
-            <li>
-              body: {item.body}
-            </li>
+
           </div>
         ))}
       </ul>
@@ -29,18 +26,15 @@ function Blog({ posts }: Props) {
 
 export const getStaticProps = async () => {
 
-
   const resp = await fetch('https://jsonplaceholder.typicode.com/posts');
 
   const posts: Post[] = await resp.json();
-
-
 
   return {
     props: {
       posts
     },
-    revalidade: 7200
+    revalidate: 7200
   }
 
 }
