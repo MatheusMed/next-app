@@ -12,6 +12,7 @@ function blogItem({ post }: Props) {
 
   return (
     <div>
+
       <h1>Blog</h1>
       <h1>{post.id}</h1>
       <h2>{post.body}</h2>
