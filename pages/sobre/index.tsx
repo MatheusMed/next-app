@@ -13,7 +13,7 @@ function Sobre() {
 
   return (
     <div>
-      <h1 className={styles.sobreTitle} >Pagina Sobre numero: ({numero})</h1>
+      <h1>Pagina Sobre numero: ({numero})</h1>
 
       <ButtonComponent label="Aumentar" onTap={handleAumentar} />
 
